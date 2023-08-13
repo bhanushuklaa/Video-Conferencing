@@ -1,0 +1,32 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+
+<main style="background:lightblue; padding: 20px; box-shadow:inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+  0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);">
+
+    <section id="room-name-wrapper" style="border-radius:3px;">
+        <p class="bg-danger-subtle"><span style="background:black; color:white; border-radius:3px;">Room Name : </span> &nbsp;<span id="room-name"></span></p>
+    </section>
+
+    <section id="video-streams"></section>
+
+    <section id="controls-wrapper" style="background:#a5cddb;">
+        
+                <div class="icon-wrapper">
+                    <div class="icon-wrapper">
+                        <img class="control-icon" id="mic-btn" src="{% static 'images/microphone.svg' %}" style="height:50px; width:50px; " />
+                    
+                        <img class="control-icon" id="camera-btn" src="{% static 'images/video.svg' %}" style="height:50px; width:50px; margin-left:50px;" />
+                    
+                        <img class="control-icon" id="leave-btn" src="{% static 'images/phone-call.png' %}" style="height:50px; width:50px; margin-left:50px;" />
+                    </div>
+                </div>
+        
+    </section>
+</main>
+
+
+<script type="text/javascript" src="{% static 'assets/AgoraRTC_N-4.8.0.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/streams.js' %}" ></script>
+{% endblock content %}
